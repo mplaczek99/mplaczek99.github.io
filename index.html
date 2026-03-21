@@ -6,12 +6,15 @@
   <title>Michael Placzek | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#home">Michael Placzek</a>
+    <a class="brand" href="#home">
+      <span class="brand-mark">MP</span>
+      <span class="brand-text">Michael Placzek</span>
+    </a>
     <nav class="site-nav" aria-label="Main">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -20,65 +23,150 @@
   </header>
 
   <main>
-    <section id="home" class="hero">
-      <p class="eyebrow">Software Developer</p>
-      <h1>Building practical software projects with a focus on clean code and steady improvement.</h1>
-      <p>
-        I am a developer with a strong interest in software engineering, problem-solving,
-        and building maintainable projects with Python, Java, and modern development tools.
-      </p>
-      <a class="button" href="#projects">View Work</a>
+    <section id="home" class="hero panel reveal">
+      <div class="hero-main">
+        <p class="eyebrow">Software Developer / Tokyo Night Build</p>
+        <h1>Shipping practical software with systems-level curiosity and clean design.</h1>
+        <p class="hero-intro">
+          I build projects that balance thoughtful architecture with real-world usability,
+          from game loops to low-level memory work and polished web interfaces.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">Explore Projects</a>
+          <a class="button ghost" href="mailto:mplaczek99@gmail.com">Get in Touch</a>
+        </div>
+        <ul class="hero-metrics" aria-label="Highlights">
+          <li>
+            <span class="metric-label">Core Languages</span>
+            <strong>Python, Java, C++</strong>
+          </li>
+          <li>
+            <span class="metric-label">Focus Areas</span>
+            <strong>Systems + Full Stack</strong>
+          </li>
+          <li>
+            <span class="metric-label">Workflow</span>
+            <strong>Readable, maintainable code</strong>
+          </li>
+        </ul>
+      </div>
+
+      <aside class="hero-side" aria-label="Current status">
+        <p class="terminal-label">status.log</p>
+        <div class="terminal-window">
+          <p><span class="prompt">$</span> focus --today</p>
+          <ul>
+            <li>Building practical software projects</li>
+            <li>Improving architecture and testing habits</li>
+            <li>Learning by shipping and refining</li>
+          </ul>
+          <p><span class="prompt">$</span> mode --active "tokyo-night"</p>
+        </div>
+        <div class="availability">
+          <p class="availability-title">Open to opportunities</p>
+          <p>Available for internships, junior engineering roles, and collaborative projects.</p>
+        </div>
+      </aside>
     </section>
 
-    <section id="about" class="section">
-      <h2>About</h2>
-      <p>
-        I am a software developer focused on building practical projects and strengthening
-        my skills through hands-on work. My background includes Python, Java, C++, and
-        web development, and I enjoy creating clean, readable code while continuing to
-        grow as an engineer.
-      </p>
+    <section id="about" class="section panel reveal">
+      <div class="section-header">
+        <p class="section-label">About</p>
+        <h2>I like hard problems, clear structure, and software that keeps getting better.</h2>
+      </div>
+      <div class="about-grid">
+        <article class="about-card">
+          <h3>Background</h3>
+          <p>
+            I am a software developer focused on hands-on growth through project work.
+            I enjoy turning complex ideas into readable code and improving each iteration
+            with stronger fundamentals.
+          </p>
+        </article>
+        <article class="about-card">
+          <h3>Strengths</h3>
+          <ul class="tag-list">
+            <li>Object-oriented design</li>
+            <li>Systems thinking</li>
+            <li>Code quality and structure</li>
+            <li>Continuous learning</li>
+          </ul>
+        </article>
+        <article class="about-card">
+          <h3>Now</h3>
+          <ul class="timeline">
+            <li><span>01</span> Building portfolio projects with stronger polish.</li>
+            <li><span>02</span> Expanding practical full stack development skills.</li>
+            <li><span>03</span> Studying performance and memory fundamentals.</li>
+          </ul>
+        </article>
+      </div>
     </section>
 
-    <section id="projects" class="section">
-      <h2>Projects</h2>
+    <section id="projects" class="section panel reveal">
+      <div class="section-header">
+        <p class="section-label">Projects</p>
+        <h2>Selected work that reflects how I think and build.</h2>
+      </div>
       <div class="project-grid">
         <article class="project-card">
+          <p class="project-type">Python + Pygame</p>
           <h3>Asteroids Game</h3>
           <p>
             A Python and Pygame project built around object-oriented design, collision logic,
             and modular game structure. This project helped me strengthen my understanding of
             classes, game loops, and maintainable code organization.
           </p>
+          <ul class="project-tags">
+            <li>OOP</li>
+            <li>Game Loop</li>
+            <li>Collision Logic</li>
+          </ul>
         </article>
         <article class="project-card">
+          <p class="project-type">C++ / Systems</p>
           <h3>Custom Memory Allocator</h3>
           <p>
             A C++ allocator project implementing explicit metadata, block splitting,
             coalescing, and fixed-size heap management. It gave me hands-on experience
             with low-level memory behavior and systems-focused programming.
           </p>
+          <ul class="project-tags">
+            <li>Memory Management</li>
+            <li>Block Splitting</li>
+            <li>Coalescing</li>
+          </ul>
         </article>
         <article class="project-card">
+          <p class="project-type">HTML + CSS</p>
           <h3>Portfolio Website</h3>
           <p>
             A personal portfolio site built with HTML and CSS to present my projects,
             background, and growing software development experience in a clean,
             responsive format.
           </p>
+          <ul class="project-tags">
+            <li>Responsive UI</li>
+            <li>Design System</li>
+            <li>Accessibility</li>
+          </ul>
         </article>
       </div>
     </section>
 
-    <section id="contact" class="section contact">
-      <h2>Contact</h2>
-      <p>Interested in working together? I would love to hear from you.</p>
-      <a class="button" href="mailto:mplaczek99@gmail.com">Send an Email</a>
+    <section id="contact" class="section panel contact reveal">
+      <p class="section-label">Contact</p>
+      <h2>Interested in building something useful together?</h2>
+      <p>I would love to hear about your team, your project, or your next challenge.</p>
+      <div class="hero-actions contact-actions">
+        <a class="button primary" href="mailto:mplaczek99@gmail.com">Send an Email</a>
+        <a class="button ghost" href="#home">Back to Top</a>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 Michael Placzek. All rights reserved.</p>
+    <p>&copy; 2026 Michael Placzek. Built with HTML, CSS, and Tokyo Night colors.</p>
   </footer>
 </body>
 </html>
