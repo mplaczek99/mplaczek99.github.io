@@ -295,6 +295,8 @@ main {
 .eyebrow,
 .section-label,
 .metric-label,
+.project-group-label,
+.project-status,
 .project-type,
 .terminal-label,
 .availability-title {
@@ -567,6 +569,29 @@ h2 {
   font-size: 0.75rem;
 }
 
+.project-groups {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.project-group {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.project-group-label {
+  margin: 0;
+  color: rgba(169, 177, 214, 0.9);
+}
+
+.project-group:first-child .project-group-label {
+  color: var(--tn-green);
+}
+
+.project-group:last-child .project-group-label {
+  color: var(--tn-purple);
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -585,11 +610,22 @@ h2 {
   transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
 }
 
-.project-card:nth-child(2) {
+.project-card-current {
+  --project-accent: var(--tn-green);
+  border-color: rgba(158, 206, 106, 0.34);
+  background: linear-gradient(166deg, rgba(37, 48, 50, 0.9), rgba(24, 27, 41, 0.94));
+}
+
+.project-status {
+  margin: 0;
+  color: var(--tn-green);
+}
+
+.project-grid .project-card:nth-child(2) {
   --project-accent: var(--tn-purple);
 }
 
-.project-card:nth-child(3) {
+.project-grid .project-card:nth-child(3) {
   --project-accent: var(--tn-cyan);
 }
 
@@ -613,6 +649,14 @@ h2 {
 .project-card p {
   margin: 0;
   color: var(--tn-fg-soft);
+}
+
+.project-card .project-type {
+  color: var(--project-accent);
+}
+
+.project-card .project-status {
+  color: var(--tn-green);
 }
 
 .project-tags {
