@@ -15,20 +15,27 @@ The site uses semantic HTML and custom CSS, with no framework or build step requ
 
 - Responsive one-page layout with sections for About, Projects, and Contact
 - Custom visual theme using CSS variables, gradients, and glass-style cards
-- Typography pairing with Google Fonts for readable body text and expressive headings
+- Typography pairing with self-hosted web fonts for readable body text and expressive headings
 - Lightweight stack (plain HTML/CSS) for fast loading and easy maintenance
 
 ## Tech Stack
 
 - HTML5
 - CSS3
-- Google Fonts
+- Self-hosted WOFF2 fonts
 - GitHub Pages
 
 ## Project Structure
 
 ```text
 .
+|- assets/
+|  |- fonts/
+|  |  |- ibm-plex-mono-400-latin.woff2
+|  |  |- ibm-plex-sans-400-700-latin.woff2
+|  |  `- syne-700-latin.woff2
+|  `- resume/
+|     `- MichaelPlaczek_Resume.pdf
 |- index.html
 |- style.css
 `- README.md
