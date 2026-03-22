@@ -21,7 +21,9 @@
   --max-width: 1120px;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -472,6 +474,8 @@ h1 {
 
 .section {
   padding: 1.9rem;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 780px;
 }
 
 .section-header {
@@ -733,6 +737,10 @@ main .reveal:nth-of-type(4) {
   .section,
   .contact {
     padding: 1.35rem;
+  }
+
+  .section {
+    contain-intrinsic-size: 1px 1150px;
   }
 
   .hero-metrics,
