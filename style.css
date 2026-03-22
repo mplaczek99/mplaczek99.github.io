@@ -12,8 +12,8 @@
   --tn-green: #9ece6a;
   --tn-orange: #e0af68;
   --tn-border: rgba(122, 162, 247, 0.27);
-  --nav-glass-bg: rgba(26, 27, 38, 0.8);
-  --nav-chip-bg: rgba(31, 35, 53, 0.65);
+  --nav-glass-bg: rgba(26, 27, 38, 0.75);
+  --nav-chip-bg: rgba(31, 35, 53, 0.75);
   --nav-blur: 10px;
   --radius-lg: 1.25rem;
   --radius-md: 1rem;
@@ -169,7 +169,7 @@ footer {
   border-radius: inherit;
   background: var(--nav-chip-bg);
   backdrop-filter: blur(var(--nav-blur));
-  opacity: 0.78;
+  opacity: 1;
   z-index: -1;
   transition: opacity 0.2s ease;
 }
@@ -178,11 +178,6 @@ footer {
 .site-nav a:focus-visible {
   color: var(--tn-cyan);
   border-color: var(--tn-cyan);
-}
-
-.site-nav a:hover::before,
-.site-nav a:focus-visible::before {
-  opacity: 0.94;
 }
 
 .social-links {
@@ -219,7 +214,7 @@ footer {
   border-radius: inherit;
   background: var(--nav-chip-bg);
   backdrop-filter: blur(var(--nav-blur));
-  opacity: 0.78;
+  opacity: 1;
   z-index: -1;
   transition: opacity 0.2s ease;
 }
@@ -229,11 +224,6 @@ footer {
   transform: translateY(-1px);
   color: var(--tn-cyan);
   border-color: var(--tn-cyan);
-}
-
-.social-link:hover::before,
-.social-link:focus-visible::before {
-  opacity: 0.94;
 }
 
 .icon-link {
