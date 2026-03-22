@@ -616,17 +616,13 @@ h2 {
   background: linear-gradient(166deg, rgba(37, 48, 50, 0.9), rgba(24, 27, 41, 0.94));
 }
 
+.project-group:last-child .project-card {
+  --project-accent: var(--tn-blue);
+}
+
 .project-status {
   margin: 0;
   color: var(--tn-green);
-}
-
-.project-grid .project-card:nth-child(2) {
-  --project-accent: var(--tn-purple);
-}
-
-.project-grid .project-card:nth-child(3) {
-  --project-accent: var(--tn-cyan);
 }
 
 .project-card:hover {
@@ -656,6 +652,11 @@ h2 {
 }
 
 .project-card .project-status {
+  color: var(--tn-green);
+}
+
+.project-card-current .project-type,
+.project-card-current .project-status {
   color: var(--tn-green);
 }
 
