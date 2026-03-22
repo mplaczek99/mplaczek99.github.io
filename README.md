@@ -14,7 +14,7 @@ The site uses semantic HTML and custom CSS, with no framework or build step requ
 ## Features
 
 - Responsive one-page layout with sections for About, Projects, and Contact
-- Custom visual theme using CSS variables, gradients, and glass-style cards
+- Multiple selectable visual themes with saved preference in local storage
 - Typography pairing with self-hosted web fonts for readable body text and expressive headings
 - Lightweight stack (plain HTML/CSS) for fast loading and easy maintenance
 
@@ -42,6 +42,7 @@ The site uses semantic HTML and custom CSS, with no framework or build step requ
 |     `- MichaelPlaczek_Resume.pdf
 |- index.html
 |- style.css
+|- theme-switcher.js
 `- README.md
 ```
 
@@ -70,7 +71,8 @@ Then visit `http://localhost:8000`.
 
 - Update content in `index.html` (headline, bio, projects, contact details)
 - Update colors, spacing, and typography in `style.css`
-- Edit theme tokens in the `:root` block for quick style changes
+- Edit theme tokens in `:root` and each `[data-theme="..."]` block for palette updates
+- Add or remove available options in the theme `<select>` and `theme-switcher.js`
 
 ## Deployment Notes
 

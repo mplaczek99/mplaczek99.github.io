@@ -11,7 +11,19 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a1b26'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-size='14' fill='%237dcfff'%3EMP%3C/text%3E%3C/svg%3E">
   <link rel="preload" href="assets/fonts/ibm-plex-sans-400-700-latin.woff2" as="font" type="font/woff2">
   <link rel="preload" href="assets/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2">
+  <script>
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem("portfolio-theme");
+        if (savedTheme) {
+          document.documentElement.setAttribute("data-theme", savedTheme);
+        }
+      } catch (error) {
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
+  <script src="theme-switcher.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -26,6 +38,18 @@
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
+
+      <div class="theme-picker-wrap">
+        <label class="theme-picker">
+          <span class="theme-picker-label">Theme</span>
+          <select id="theme-select" class="theme-select" data-theme-select>
+            <option value="tokyo-night">Tokyo Night</option>
+            <option value="aurora-fog">Aurora Fog</option>
+            <option value="ember-forge">Ember Forge</option>
+            <option value="deep-forest">Deep Forest</option>
+          </select>
+        </label>
+      </div>
 
       <nav class="social-links" aria-label="Social profiles">
         <a class="social-link icon-link" href="https://www.linkedin.com/in/mplaczek99/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
@@ -50,7 +74,7 @@
   <main>
     <section id="home" class="hero panel reveal">
       <div class="hero-main">
-        <p class="eyebrow">Software Developer / Tokyo Night Build</p>
+        <p class="eyebrow">Software Developer / Multi-Theme Build</p>
         <h1>Shipping practical software with systems-level curiosity and clean design.</h1>
         <p class="hero-intro">
           I build projects that balance thoughtful architecture with real-world usability,
@@ -86,7 +110,7 @@
             <li>Improving architecture and testing habits</li>
             <li>Learning by shipping and refining</li>
           </ul>
-          <p><span class="prompt">$</span> mode --active "tokyo-night"</p>
+          <p><span class="prompt">$</span> mode --active "<span data-theme-name>tokyo-night</span>"</p>
         </div>
         <div class="availability">
           <p class="availability-title">Open to opportunities</p>
@@ -216,7 +240,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 Michael Placzek. Built with HTML, CSS, and Tokyo Night colors.</p>
+    <p>&copy; 2026 Michael Placzek. Built with HTML, CSS, and selectable color themes.</p>
   </footer>
 </body>
 </html>
