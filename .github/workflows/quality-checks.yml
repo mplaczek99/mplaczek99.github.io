@@ -1,0 +1,38 @@
+name: Quality Checks
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  html-validation:
+    name: HTML Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate index.html
+        run: npx --yes html-validate@10.2.1 index.html
+
+  link-check:
+    name: Link Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check local links and anchors
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --offline --no-progress --verbose index.html README.md

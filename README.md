@@ -23,12 +23,16 @@ The site uses semantic HTML and custom CSS, with no framework or build step requ
 - HTML5
 - CSS3
 - Self-hosted WOFF2 fonts
+- GitHub Actions (quality checks)
 - GitHub Pages
 
 ## Project Structure
 
 ```text
 .
+|- .github/
+|  `- workflows/
+|     `- quality-checks.yml
 |- assets/
 |  |- fonts/
 |  |  |- ibm-plex-mono-400-latin.woff2
@@ -55,6 +59,12 @@ python3 -m http.server 8000
 ```
 
 Then visit `http://localhost:8000`.
+
+## Automated Quality Checks
+
+- A GitHub Actions workflow runs on pushes to `main` and all pull requests.
+- HTML is validated with `html-validate` against `index.html`.
+- Links and in-page anchors are checked with Lychee in offline mode for `index.html` and `README.md`.
 
 ## Customization Guide
 
