@@ -30,14 +30,6 @@
   src: url("assets/fonts/ibm-plex-mono-400-latin.woff2") format("woff2");
 }
 
-@font-face {
-  font-family: "Syne";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("assets/fonts/syne-700-latin.woff2") format("woff2");
-}
-
 :root {
   --tn-bg-0: #16161e;
   --tn-bg-1: #1a1b26;
@@ -156,7 +148,7 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  font-family: "Syne", "IBM Plex Sans", sans-serif;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
@@ -345,7 +337,8 @@ h2,
 h3 {
   margin: 0;
   line-height: 1.1;
-  font-family: "Syne", "IBM Plex Sans", sans-serif;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  font-weight: 700;
 }
 
 h1 {
