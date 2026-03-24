@@ -595,6 +595,14 @@ h1 {
   gap: 0.7rem;
 }
 
+.hero-cta-note {
+  margin: 0;
+  color: var(--tn-fg-muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -1106,6 +1114,24 @@ h2 {
   max-width: 55ch;
   margin: 0.55rem auto 0;
   color: var(--tn-fg-soft);
+}
+
+.contact-direct {
+  margin-top: 0.85rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  color: var(--tn-fg-muted);
+}
+
+.contact-direct a {
+  color: var(--tn-cyan);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.contact-direct a:hover,
+.contact-direct a:focus-visible {
+  color: var(--tn-fg-strong);
 }
 
 .contact-actions {
