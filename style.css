@@ -566,6 +566,29 @@ h1 {
   font-size: clamp(2rem, 4.4vw, 3.65rem);
 }
 
+.hero-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: fit-content;
+  margin: -0.1rem 0 0;
+  padding: 0.32rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--line-cyan-mid);
+  background: rgba(24, 29, 44, 0.58);
+  color: var(--tn-fg-strong);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+}
+
+.hero-location-icon {
+  width: 0.95rem;
+  height: 0.95rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 .hero-intro {
   margin: 0;
   max-width: 60ch;
