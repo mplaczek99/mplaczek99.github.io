@@ -8,25 +8,28 @@ Personal portfolio website for `mplaczek99.github.io`, built as a lightweight st
 
 ## Overview
 
-This repository contains a single-page portfolio focused on clear presentation of background, selected projects, and contact information.
-The site uses semantic HTML and custom CSS, with no framework or build step required.
+This repository contains a single-page portfolio focused on clear presentation of background, experience, selected projects, and contact information.
+The site is intentionally simple to maintain: semantic HTML, custom CSS, and a small vanilla JavaScript theme module with no build step.
 
-## Features
+## Current Features
 
-- Responsive one-page layout with sections for About, Projects, and Contact
-- Multiple selectable visual themes with saved preference in local storage
-- Typography pairing with self-hosted web fonts for readable body text and expressive headings
-- Lightweight stack (plain HTML/CSS) for fast loading and easy maintenance
+- Single-page layout with sections for Home, About, Experience, Projects, and Contact
+- Four selectable color themes (`tokyo-night`, `aurora-fog`, `ember-forge`, `deep-forest`) with saved preference in local storage
+- Self-hosted fonts and SVG icons to reduce third-party dependencies
+- Responsive design for desktop, tablet, and mobile breakpoints
+- Security-minded metadata in `index.html` (CSP, permissions policy, and strict referrer policy)
+- Downloadable resume and direct links to LinkedIn, GitHub, and email
 
 ## Tech Stack
 
 - HTML5
-- CSS3
-- Self-hosted WOFF2 fonts
+- CSS3 (custom properties, layout grids, media queries)
+- Vanilla JavaScript (theme persistence and UI synchronization)
+- Self-hosted WOFF2 assets
 - GitHub Actions (quality checks)
-- GitHub Pages
+- GitHub Pages (deployment)
 
-## Project Structure
+## Repository Structure
 
 ```text
 .
@@ -38,6 +41,11 @@ The site uses semantic HTML and custom CSS, with no framework or build step requ
 |  |  |- ibm-plex-mono-400-latin.woff2
 |  |  |- ibm-plex-sans-400-700-latin.woff2
 |  |  `- syne-700-latin.woff2
+|  |- icons/
+|  |  |- cplusplus.svg
+|  |  |- go.svg
+|  |  |- java.svg
+|  |  `- python.svg
 |  `- resume/
 |     `- MichaelPlaczek_Resume.pdf
 |- index.html
@@ -61,23 +69,28 @@ python3 -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
+## Customization Guide
+
+- **Content**: Update portfolio copy, project cards, and contact information in `index.html`.
+- **Styling**: Update layout, spacing, typography, and component styling in `style.css`.
+- **Themes**:
+  - Update theme variables in `:root` and each `[data-theme="..."]` block in `style.css`.
+  - Keep available theme values synchronized across:
+    - the inline bootstrap script in `index.html`
+    - the `<select data-theme-select>` options in `index.html`
+    - `themeMeta` and `allowedThemes` in `theme-switcher.js`
+- **Assets**: Replace files in `assets/resume/`, `assets/icons/`, or `assets/fonts/` as needed, then update references in `index.html`/`style.css`.
+
 ## Automated Quality Checks
 
 - A GitHub Actions workflow runs on pushes to `main` and all pull requests.
-- HTML is validated with `html-validate` against `index.html`.
-- Links and in-page anchors are checked with Lychee in offline mode for `index.html` and `README.md`.
-
-## Customization Guide
-
-- Update content in `index.html` (headline, bio, projects, contact details)
-- Update colors, spacing, and typography in `style.css`
-- Edit theme tokens in `:root` and each `[data-theme="..."]` block for palette updates
-- Add or remove available options in the theme `<select>` and `theme-switcher.js`
+- `html-validate` verifies `index.html`.
+- Lychee runs in offline mode to validate links and anchors in `index.html` and `README.md`.
 
 ## Deployment Notes
 
 This repo is intended for GitHub Pages hosting as a user site (`<username>.github.io`).
-Changes are published when pushed to the branch configured for Pages in the repository settings.
+Changes are published when pushed to the branch configured for Pages in repository settings.
 
 ## Contact
 
