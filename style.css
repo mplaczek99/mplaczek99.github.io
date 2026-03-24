@@ -288,6 +288,11 @@ footer {
   display: flex;
   align-items: center;
   gap: 0.55rem;
+  width: 100%;
+}
+
+.nav-theme-picker {
+  margin-left: auto;
 }
 
 .site-nav {
@@ -599,6 +604,36 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
+}
+
+.hero-social-links {
+  gap: 0.7rem;
+}
+
+.hero .hero-actions > .button {
+  min-width: 10rem;
+}
+
+.hero-social-links .social-link {
+  min-height: 2.65rem;
+  min-width: 10rem;
+  padding: 0.7rem 1.1rem;
+  border-radius: 0.72rem;
+  justify-content: center;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: normal;
+  gap: 0.45rem;
+}
+
+.hero-social-links .icon-link span {
+  font-size: inherit;
+}
+
+.hero-social-links .icon-link svg {
+  width: 1.1em;
+  height: 1.1em;
 }
 
 .hero-cta-note {
@@ -1310,6 +1345,15 @@ main .reveal:nth-of-type(4) {
   .contact-actions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .hero-social-links {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-social-links .social-link {
+    width: 100%;
+    min-width: 0;
   }
 
   .hero-actions .button,
