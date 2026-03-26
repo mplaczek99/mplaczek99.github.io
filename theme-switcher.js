@@ -1,18 +1,34 @@
 (() => {
   const storageKey = "portfolio-theme";
-  const fallbackTheme = "tokyo-night";
-  const themeMeta = Object.freeze({
-    "tokyo-night": { themeColor: "#1a1b26" },
-    "aurora-fog": { themeColor: "#132430" },
-    "ember-forge": { themeColor: "#241717" },
-    "deep-forest": { themeColor: "#13231d" }
-  });
-  const allowedThemes = new Set(Object.keys(themeMeta));
+  const readThemeMeta = () => {
+    const themeMetaScript = document.getElementById("theme-meta");
+    if (!themeMetaScript) {
+      return {};
+    }
+
+    try {
+      const parsedThemeMeta = JSON.parse(themeMetaScript.textContent);
+      if (parsedThemeMeta && typeof parsedThemeMeta === "object") {
+        return parsedThemeMeta;
+      }
+    } catch (error) {
+    }
+
+    return {};
+  };
+
+  const themeMeta = Object.freeze(readThemeMeta());
+  const themeEntries = Object.entries(themeMeta);
+
+  if (!themeEntries.length) {
+    return;
+  }
+
+  const fallbackTheme = themeEntries[0][0];
+  const allowedThemes = new Set(themeEntries.map(([themeName]) => themeName));
 
   const root = document.documentElement;
-  const select = document.querySelector("[data-theme-select]");
   const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-  const activeThemeName = document.querySelector("[data-theme-name]");
 
   const normalizeTheme = (themeValue) => {
     if (themeValue && allowedThemes.has(themeValue)) {
@@ -21,24 +37,28 @@
     return fallbackTheme;
   };
 
+  const syncThemeColor = (theme) => {
+    const palette = themeMeta[theme];
+    if (themeColorMeta && palette && palette.themeColor && themeColorMeta.content !== palette.themeColor) {
+      themeColorMeta.setAttribute("content", palette.themeColor);
+    }
+  };
+
+  const syncThemeName = (theme) => {
+    const activeThemeName = document.querySelector("[data-theme-name]");
+    if (activeThemeName && activeThemeName.textContent !== theme) {
+      activeThemeName.textContent = theme;
+    }
+  };
+
   const applyTheme = (themeValue, persist = true) => {
     const theme = normalizeTheme(themeValue);
     if (root.dataset.theme !== theme) {
       root.dataset.theme = theme;
     }
 
-    if (select && select.value !== theme) {
-      select.value = theme;
-    }
-
-    if (activeThemeName && activeThemeName.textContent !== theme) {
-      activeThemeName.textContent = theme;
-    }
-
-    const palette = themeMeta[theme];
-    if (themeColorMeta && palette && themeColorMeta.content !== palette.themeColor) {
-      themeColorMeta.setAttribute("content", palette.themeColor);
-    }
+    syncThemeColor(theme);
+    syncThemeName(theme);
 
     if (persist) {
       try {
@@ -46,6 +66,8 @@
       } catch (error) {
       }
     }
+
+    return theme;
   };
 
   let storedTheme = null;
@@ -54,14 +76,42 @@
   } catch (error) {
   }
 
-  const initialTheme = normalizeTheme(storedTheme || root.dataset.theme);
-  applyTheme(initialTheme, false);
+  let currentTheme = applyTheme(storedTheme || root.dataset.theme, false);
 
-  if (!select) {
-    return;
+  const buildThemeOptions = (select) => {
+    const fragment = document.createDocumentFragment();
+    for (const [themeName, themeConfig] of themeEntries) {
+      const option = document.createElement("option");
+      option.value = themeName;
+      option.textContent = themeConfig.label || themeName;
+      fragment.appendChild(option);
+    }
+    select.replaceChildren(fragment);
+  };
+
+  const initializeThemeSelect = () => {
+    const select = document.querySelector("[data-theme-select]");
+    if (!select) {
+      return;
+    }
+
+    buildThemeOptions(select);
+
+    if (select.value !== currentTheme) {
+      select.value = currentTheme;
+    }
+
+    select.addEventListener("change", () => {
+      currentTheme = applyTheme(select.value);
+      if (select.value !== currentTheme) {
+        select.value = currentTheme;
+      }
+    });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeThemeSelect, { once: true });
+  } else {
+    initializeThemeSelect();
   }
-
-  select.addEventListener("change", () => {
-    applyTheme(select.value);
-  });
 })();

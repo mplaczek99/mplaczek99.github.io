@@ -77,10 +77,8 @@ Then visit `http://localhost:8000`.
 - **Anchor offset**: `style.css` defines `--anchor-offset` and applies it via `scroll-margin-top` on `main > section[id]` to prevent section headers from being hidden by the sticky nav.
 - **Themes**:
   - Update theme variables in `:root` and each `[data-theme="..."]` block in `style.css`.
-  - Keep available theme values synchronized across:
-    - the inline bootstrap script in `index.html`
-    - the `<select data-theme-select>` options in `index.html`
-    - `themeMeta` and `allowedThemes` in `theme-switcher.js`
+  - Update the shared theme catalog in `<script id="theme-meta" type="application/json">` in `index.html`.
+  - Keep each catalog key aligned with its matching `[data-theme="..."]` block in `style.css`; theme options are generated automatically by `theme-switcher.js`.
 - **Assets**: Replace files in `assets/resume/`, `assets/icons/`, or `assets/fonts/` as needed, then update references in `index.html`/`style.css`.
 
 ## Automated Quality Checks

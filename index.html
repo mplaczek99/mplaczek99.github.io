@@ -8,13 +8,14 @@
   <meta name="theme-color" content="#1a1b26">
   <meta name="color-scheme" content="dark">
   <link rel="canonical" href="https://mplaczek99.github.io/">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-sKMW5qleBR99VMf4KZqBhxG7OIAyp5qbAUsClCFqjsE='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-src 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-wRpuRRFyMgUUP0GNAE5KWW3EFH9XMz+DEYe/dKyXaFo='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="accelerometer=(), autoplay=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a1b26'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-size='14' fill='%237dcfff'%3EMP%3C/text%3E%3C/svg%3E">
   <link rel="preload" href="assets/fonts/ibm-plex-sans-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <script>(() => { try { const themeColors = { "tokyo-night": "#1a1b26", "aurora-fog": "#132430", "ember-forge": "#241717", "deep-forest": "#13231d" }; const savedTheme = localStorage.getItem("portfolio-theme"); if (savedTheme && Object.prototype.hasOwnProperty.call(themeColors, savedTheme)) { document.documentElement.setAttribute("data-theme", savedTheme); const themeColorMeta = document.querySelector('meta[name="theme-color"]'); if (themeColorMeta) { themeColorMeta.setAttribute("content", themeColors[savedTheme]); } } } catch (error) {} })();</script>
+  <script id="theme-meta" type="application/json">{"tokyo-night":{"label":"Tokyo Night","themeColor":"#1a1b26"},"aurora-fog":{"label":"Aurora Fog","themeColor":"#132430"},"ember-forge":{"label":"Ember Forge","themeColor":"#241717"},"deep-forest":{"label":"Deep Forest","themeColor":"#13231d"}}</script>
+  <script>(() => { try { const themeMetaScript = document.getElementById("theme-meta"); const themeMeta = themeMetaScript ? JSON.parse(themeMetaScript.textContent) : {}; const savedTheme = localStorage.getItem("portfolio-theme"); if (savedTheme && Object.prototype.hasOwnProperty.call(themeMeta, savedTheme)) { document.documentElement.setAttribute("data-theme", savedTheme); const palette = themeMeta[savedTheme]; if (palette && palette.themeColor) { const themeColorMeta = document.querySelector('meta[name="theme-color"]'); if (themeColorMeta) { themeColorMeta.setAttribute("content", palette.themeColor); } } } } catch (error) {} })();</script>
   <link rel="stylesheet" href="style.css">
   <script src="theme-switcher.js" defer></script>
 </head>
@@ -32,10 +33,7 @@
         <label class="theme-picker">
           <span class="theme-picker-label">Theme</span>
           <select id="theme-select" class="theme-select" data-theme-select>
-            <option value="tokyo-night">Tokyo Night</option>
-            <option value="aurora-fog">Aurora Fog</option>
-            <option value="ember-forge">Ember Forge</option>
-            <option value="deep-forest">Deep Forest</option>
+            <option value="">Loading themes...</option>
           </select>
         </label>
       </div>
