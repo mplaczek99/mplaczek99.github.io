@@ -17,6 +17,7 @@ The site is intentionally simple to maintain: semantic HTML, custom CSS, and a s
 - Four selectable color themes (`tokyo-night`, `aurora-fog`, `ember-forge`, `deep-forest`) with saved preference in local storage
 - Self-hosted fonts and SVG icons to reduce third-party dependencies
 - Responsive design for desktop, tablet, and mobile breakpoints
+- In-page navigation anchors account for sticky header height so section titles remain visible
 - Security-minded metadata in `index.html` (CSP, permissions policy, and strict referrer policy)
 - Downloadable resume and direct links to LinkedIn, GitHub, and email
 
@@ -73,6 +74,7 @@ Then visit `http://localhost:8000`.
 
 - **Content**: Update portfolio copy, project cards, and contact information in `index.html`.
 - **Styling**: Update layout, spacing, typography, and component styling in `style.css`.
+- **Anchor offset**: `style.css` defines `--anchor-offset` and applies it via `scroll-margin-top` on `main > section[id]` to prevent section headers from being hidden by the sticky nav.
 - **Themes**:
   - Update theme variables in `:root` and each `[data-theme="..."]` block in `style.css`.
   - Keep available theme values synchronized across:
