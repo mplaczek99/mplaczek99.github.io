@@ -1061,6 +1061,7 @@ h2 {
 }
 
 .project-card {
+  --project-link-tag-space: 9rem;
   --project-accent: var(--tn-blue);
   position: relative;
   display: grid;
@@ -1074,41 +1075,36 @@ h2 {
   transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
 }
 
-.project-card-link {
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.project-card-link::after {
-  content: "Open Repo";
+.project-link-tag {
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
-  padding: 0.2rem 0.48rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.5rem;
   border-radius: 999px;
   border: 1px solid var(--line-accent-mid);
   background: rgba(31, 35, 53, 0.8);
   color: var(--project-accent);
+  text-decoration: none;
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.75rem;
   letter-spacing: 0.04em;
-  opacity: 0;
-  transform: translateY(-3px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  pointer-events: none;
+  white-space: nowrap;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
-.project-card-link:hover::after,
-.project-card-link:focus-visible::after {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.project-card-link:focus-visible {
-  transform: translateY(-4px);
+.project-link-tag:hover,
+.project-link-tag:focus-visible {
   border-color: var(--project-accent);
-  box-shadow: 0 14px 30px rgba(11, 13, 23, 0.56);
+  background: rgba(31, 35, 53, 0.9);
+  color: var(--tn-fg-strong);
+}
+
+.project-link-tag:focus-visible {
   outline: none;
+  box-shadow: 0 0 0 1px var(--project-accent);
 }
 
 .project-card-current {
@@ -1121,7 +1117,8 @@ h2 {
   --project-accent: var(--tn-blue);
 }
 
-.project-card:hover {
+.project-card:hover,
+.project-card:focus-within {
   transform: translateY(-4px);
   border-color: var(--project-accent);
   box-shadow: 0 14px 30px rgba(11, 13, 23, 0.56);
@@ -1129,6 +1126,7 @@ h2 {
 
 .project-type {
   margin: 0;
+  padding-right: var(--project-link-tag-space);
   color: var(--project-accent);
 }
 
