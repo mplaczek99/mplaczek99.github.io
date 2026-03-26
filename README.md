@@ -50,6 +50,8 @@ The site is intentionally simple to maintain: semantic HTML, custom CSS, and a s
 |  `- resume/
 |     `- MichaelPlaczek_Resume.pdf
 |- index.html
+|- robots.txt
+|- sitemap.xml
 |- style.css
 |- theme-switcher.js
 `- README.md
