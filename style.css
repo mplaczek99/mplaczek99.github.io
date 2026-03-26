@@ -1272,6 +1272,17 @@ main .reveal:nth-of-type(4) {
     --anchor-offset: 1rem;
   }
 
+  body {
+    background-image:
+      radial-gradient(circle at 16% 12%, var(--bg-spot-a) 0%, transparent 56%),
+      radial-gradient(circle at 88% -6%, var(--bg-spot-b) 0%, transparent 54%),
+      radial-gradient(circle at 52% 112%, var(--bg-spot-c) 0%, transparent 58%),
+      linear-gradient(165deg, var(--tn-bg-1) 0%, var(--tn-bg-2) 58%, var(--tn-bg-0) 100%);
+    background-size: 104vmax 104vmax, 100vmax 100vmax, 96vmax 96vmax, auto;
+    background-position: -52vmax -48vmax, 54vmax -54vmax, 50% 122%, 0 0;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  }
+
   body::before,
   body::after {
     display: none;
