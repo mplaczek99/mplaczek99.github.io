@@ -390,7 +390,7 @@ footer {
 
 .theme-picker-label {
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.07em;
   color: var(--tn-fg-muted);
@@ -948,7 +948,7 @@ h2 {
   margin: 0;
   color: var(--tn-fg-muted);
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1068,7 +1068,7 @@ h2 {
   background: rgba(31, 35, 53, 0.8);
   color: var(--project-accent);
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.63rem;
+  font-size: 0.75rem;
   letter-spacing: 0.04em;
   opacity: 0;
   transform: translateY(-3px);
@@ -1146,7 +1146,7 @@ h2 {
   background: rgba(31, 35, 53, 0.68);
   color: var(--tn-fg-chip);
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.74rem;
+  font-size: 0.75rem;
   line-height: 1.2;
 }
 
@@ -1425,7 +1425,7 @@ main .reveal:nth-of-type(4) {
   }
 
   .theme-picker-label {
-    font-size: 0.55rem;
+    font-size: 0.75rem;
   }
 
   .terminal-window p {
@@ -1442,7 +1442,7 @@ main .reveal:nth-of-type(4) {
   }
 
   .project-tags li {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   }
 }
 
