@@ -251,27 +251,6 @@ a {
   text-decoration: none;
 }
 
-.skip-link {
-  position: fixed;
-  top: 0.75rem;
-  left: 0.75rem;
-  z-index: 100;
-  transform: translateY(-140%);
-  padding: 0.45rem 0.7rem;
-  border: 1px solid var(--tn-cyan);
-  border-radius: 0.5rem;
-  background: var(--tn-bg-1);
-  color: var(--tn-fg-strong);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.02em;
-  transition: transform 0.18s ease;
-}
-
-.skip-link:focus-visible {
-  transform: translateY(0);
-}
-
 .site-header,
 main,
 footer {
