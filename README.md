@@ -87,7 +87,7 @@ Then visit `http://localhost:8000`.
 
 - A GitHub Actions workflow runs on pushes to `main` and all pull requests.
 - `html-validate` verifies `index.html`.
-- Lychee runs in offline mode to validate links and anchors in `index.html` and `README.md`.
+- Lychee validates links and anchors in `index.html` and `README.md` (including external links) with retries for transient network failures.
 
 ## Deployment Notes
 

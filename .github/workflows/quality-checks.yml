@@ -32,7 +32,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Check local links and anchors
+      - name: Check links and anchors
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --offline --no-progress --verbose index.html README.md
+          args: --no-progress --max-retries 3 --retry-wait-time 2 --verbose index.html README.md

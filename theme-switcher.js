@@ -20,7 +20,23 @@
   const themeMeta = Object.freeze(readThemeMeta());
   const themeEntries = Object.entries(themeMeta);
 
+  const setThemeSelectUnavailable = () => {
+    const select = document.querySelector("[data-theme-select]");
+    if (!select) {
+      return;
+    }
+
+    const unavailableOption = document.createElement("option");
+    unavailableOption.value = "";
+    unavailableOption.textContent = "Theme unavailable";
+    select.replaceChildren(unavailableOption);
+    select.value = "";
+    select.disabled = true;
+    select.setAttribute("aria-disabled", "true");
+  };
+
   if (!themeEntries.length) {
+    setThemeSelectUnavailable();
     return;
   }
 
