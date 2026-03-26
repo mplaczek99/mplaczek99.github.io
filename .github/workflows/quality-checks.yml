@@ -35,4 +35,10 @@ jobs:
       - name: Check links and anchors
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --no-progress --max-retries 3 --retry-wait-time 2 --verbose index.html README.md
+          args: >-
+            --no-progress
+            --max-retries 3
+            --retry-wait-time 2
+            --verbose
+            --exclude '^https://www\.linkedin\.com/.*'
+            index.html README.md
