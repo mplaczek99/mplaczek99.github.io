@@ -1454,6 +1454,16 @@ main .reveal:nth-of-type(4) {
   .project-tags li {
     font-size: 0.75rem;
   }
+
+  .project-link-tag {
+    position: static;
+    justify-self: flex-start;
+    margin-bottom: 0.15rem;
+  }
+
+  .project-type {
+    padding-right: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
