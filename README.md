@@ -14,7 +14,7 @@ The site is intentionally simple to maintain: semantic HTML, custom CSS, and a s
 ## Current Features
 
 - Single-page layout with sections for Home, About, Experience, Projects, and Contact
-- Four selectable color themes (`tokyo-night`, `aurora-fog`, `ember-forge`, `deep-forest`) with saved preference in local storage
+- Four selectable color themes (`tokyo-night`, `aurora-fog`, `ember-forge`, `deep-forest`) with saved preference in `localStorage`
 - Self-hosted fonts and SVG icons to reduce third-party dependencies
 - Responsive design for desktop, tablet, and mobile breakpoints
 - In-page navigation anchors account for sticky header height so section titles remain visible
@@ -46,6 +46,7 @@ The site is intentionally simple to maintain: semantic HTML, custom CSS, and a s
 |  |  |- cplusplus.svg
 |  |  |- go.svg
 |  |  |- java.svg
+|  |  |- location-pin.svg
 |  |  `- python.svg
 |  `- resume/
 |     `- MichaelPlaczek_Resume.pdf
