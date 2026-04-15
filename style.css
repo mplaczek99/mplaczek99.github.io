@@ -547,7 +547,6 @@ main {
 .eyebrow,
 .section-label,
 .metric-label,
-.project-group-label,
 .project-type,
 .terminal-label,
 .availability-title {
@@ -997,25 +996,9 @@ h2 {
   font-size: 0.92rem;
 }
 
-.project-groups {
-  display: grid;
-  gap: 1.2rem;
-}
-
-.project-group {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.project-group-label {
-  margin: 0;
-  color: var(--label-color);
-}
-
 .eyebrow,
 .section-label,
 .metric-label,
-.project-group-label,
 .terminal-label,
 .availability-title,
 .about-card h3,
@@ -1084,10 +1067,6 @@ h2 {
   background: linear-gradient(166deg, rgba(37, 48, 50, 0.9), rgba(24, 27, 41, 0.94));
 }
 
-.project-group:last-child .project-card {
-  --project-accent: var(--tn-blue);
-}
-
 .project-card:hover,
 .project-card:focus-within {
   transform: translateY(-4px);
@@ -1099,6 +1078,22 @@ h2 {
   margin: 0;
   padding-right: var(--project-link-tag-space);
   color: var(--project-accent);
+}
+
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(158, 206, 106, 0.35);
+  background: rgba(158, 206, 106, 0.14);
+  color: var(--tn-green);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .project-card h3 {
