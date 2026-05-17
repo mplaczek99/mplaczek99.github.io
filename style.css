@@ -744,9 +744,9 @@ h1 {
   align-items: center;
   gap: 0.55rem;
   min-width: 0;
-  padding: 0.45rem 0.55rem;
-  border-radius: 0.65rem;
-  background: rgba(31, 35, 53, 0.58);
+  padding: 0.1rem 0;
+  border-radius: 0;
+  background: transparent;
   color: var(--tn-fg-strong);
   font-size: 0.96rem;
   line-height: 1.25;
