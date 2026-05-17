@@ -8,6 +8,11 @@
   <meta name="theme-color" content="#1a1b26">
   <meta name="color-scheme" content="dark">
   <link rel="canonical" href="https://mplaczek99.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Michael Placzek | Software Engineer">
+  <meta property="og:description" content="Backend-focused software engineer with full-stack, systems, and cybersecurity project experience.">
+  <meta property="og:url" content="https://mplaczek99.github.io/">
+  <meta name="twitter:card" content="summary">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-wRpuRRFyMgUUP0GNAE5KWW3EFH9XMz+DEYe/dKyXaFo='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="accelerometer=(), autoplay=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()">
@@ -20,6 +25,7 @@
   <script src="theme-switcher.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
     <div class="header-actions">
       <nav class="site-nav" aria-label="Main">
@@ -50,11 +56,12 @@
           <span>Park Ridge, IL</span>
         </a>
         <p class="hero-intro">
-          M.S. in Computer Science building backend, full-stack, and systems projects.
+          I am an M.S. in Computer Science graduate building backend, full-stack, and systems projects.
           I focus on clear architecture, measurable performance, and practical delivery.
         </p>
         <div class="hero-actions">
           <a class="button primary" href="assets/resume/MichaelPlaczek_Resume.pdf" target="_blank" rel="noopener noreferrer">View Resume</a>
+          <a class="button ghost" href="mailto:mplaczek99@gmail.com">Email Me</a>
           <nav class="social-links hero-social-links" aria-label="Social profiles">
             <a class="social-link icon-link" href="https://www.linkedin.com/in/mplaczek99/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -74,7 +81,7 @@
         </div>
         <ul class="hero-metrics">
           <li>
-            <span class="metric-label">Core Languages</span>
+            <span class="metric-label">Primary Stack</span>
             <ul class="language-list">
               <li class="language-item">
                 <img class="language-icon" src="assets/icons/java.svg" width="18" height="18" alt="" aria-hidden="true">
@@ -113,20 +120,10 @@
         </ul>
       </div>
 
-      <aside class="hero-side" aria-label="Current status">
-        <p class="terminal-label">status.log</p>
-        <div class="terminal-window">
-          <p><span class="prompt">$</span> focus --today</p>
-          <ul>
-            <li>Building backend and systems projects</li>
-            <li>Improving API design, testing, and debugging</li>
-            <li>Applying for full-time software engineering roles</li>
-          </ul>
-          <p><span class="prompt">$</span> theme --active "<span data-theme-name>Tokyo Night</span>"</p>
-        </div>
+      <aside class="hero-side" aria-label="Portfolio highlights">
         <div class="availability">
-          <p class="availability-title">Open to Work</p>
-          <p>Available for full-time software engineering roles.</p>
+          <p class="availability-title">Available to Work</p>
+          <p>Available for full-time software engineering roles in backend, systems, or full-stack development.</p>
         </div>
       </aside>
     </section>
@@ -134,31 +131,31 @@
     <section id="about" class="section panel reveal">
       <div class="section-header">
         <p class="section-label">About</p>
-        <h2>I build software that is clear, useful, and maintainable.</h2>
+        <h2>I like engineering work where correctness, performance, and maintainability matter.</h2>
       </div>
       <div class="about-grid">
         <article class="about-card">
-          <h3>Background</h3>
+          <h3>Engineering Style</h3>
           <p>
-            I turn complex requirements into maintainable code, then improve quality
-            through testing, debugging, and performance tuning.
+            I prefer clear data models, small service boundaries, measurable behavior,
+            and code that can be debugged by the next person who reads it.
           </p>
         </article>
         <article class="about-card">
-          <h3>Strengths</h3>
+          <h3>Best Fit</h3>
           <ul class="tag-list">
             <li>Backend API development</li>
-            <li>Object-oriented design</li>
+            <li>Full-stack product work</li>
+            <li>Security-aware systems</li>
             <li>Performance optimization</li>
-            <li>Debugging and testing</li>
           </ul>
         </article>
         <article class="about-card">
-          <h3>Now</h3>
+          <h3>Current Focus</h3>
           <ul class="timeline">
-            <li><span>01</span> Polishing production-style projects.</li>
-            <li><span>02</span> Expanding full-stack skills with Go, Vue, and PostgreSQL.</li>
-            <li><span>03</span> Studying systems performance and memory.</li>
+            <li><span>01</span> Building XRayView as a desktop imaging workstation.</li>
+            <li><span>02</span> Deepening Go, Vue, PostgreSQL, and Docker project work.</li>
+            <li><span>03</span> Practicing systems performance through memory and benchmark projects.</li>
           </ul>
         </article>
       </div>
@@ -167,7 +164,7 @@
     <section id="experience" class="section panel reveal">
       <div class="section-header">
         <p class="section-label">Experience</p>
-        <h2>Production support experience with continued engineering growth.</h2>
+        <h2>Security and infrastructure work that sharpened my production instincts.</h2>
       </div>
       <div class="experience-layout">
         <article class="experience-card">
@@ -208,6 +205,10 @@
                 <p class="credential-title">Boot.dev Backend Development Track</p>
                 <p class="credential-detail">In progress</p>
               </li>
+              <li>
+                <p class="credential-title">ZTM Rust Programming Course</p>
+                <p class="credential-detail">In progress</p>
+              </li>
             </ul>
           </article>
         </div>
@@ -217,69 +218,114 @@
     <section id="projects" class="section panel reveal">
       <div class="section-header">
         <p class="section-label">Projects</p>
-        <h2>Three projects that best show my backend, systems, and full-stack range.</h2>
+        <h2>Selected projects with the clearest engineering signal.</h2>
       </div>
       <div class="project-grid">
         <article class="project-card project-card-current">
-          <a class="project-link-tag" href="https://github.com/mplaczek99/xrayview" target="_blank" rel="noopener noreferrer" aria-label="Direct GitHub Link: XRayView">Direct GitHub Link</a>
-          <p class="project-type">Go + TypeScript</p>
-          <p class="project-status">Current Project</p>
+          <div class="project-visual xray-visual" aria-hidden="true">
+            <div class="xray-frame">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="measure-line"></div>
+          </div>
+          <div class="project-card-header">
+            <p class="project-type">Go + TypeScript + Wails</p>
+            <p class="project-status">Current Project</p>
+          </div>
           <h3>XRayView</h3>
           <p>
             DICOM X-ray workstation for viewing, processing, and analyzing radiographs
             with grayscale filters, pseudocolor palettes, measurements, and compare mode.
           </p>
+          <ul class="project-highlights">
+            <li>Desktop imaging workflow built around radiograph review and analysis.</li>
+            <li>Processing tools include filters, palettes, measurements, and side-by-side comparison.</li>
+          </ul>
           <ul class="project-tags">
             <li>DICOM Imaging</li>
             <li>Wails Desktop</li>
             <li>Analysis Tools</li>
           </ul>
+          <a class="project-action" href="https://github.com/mplaczek99/xrayview" target="_blank" rel="noopener noreferrer">View repository</a>
         </article>
         <article class="project-card">
-          <a class="project-link-tag" href="https://github.com/mplaczek99/PA5" target="_blank" rel="noopener noreferrer" aria-label="Direct GitHub Link: Custom Allocator">Direct GitHub Link</a>
-          <p class="project-type">C++</p>
+          <div class="project-visual allocator-visual" aria-hidden="true">
+            <div class="memory-row">
+              <span class="block used"></span>
+              <span class="block free"></span>
+              <span class="block used"></span>
+              <span class="block split"></span>
+            </div>
+            <div class="memory-row">
+              <span class="block free"></span>
+              <span class="block used"></span>
+              <span class="block free"></span>
+            </div>
+          </div>
+          <p class="project-type">C++ Systems</p>
           <h3>Custom Allocator</h3>
           <p>
             C++ allocator with explicit metadata, next-fit allocation, block splitting,
             and coalescing in a fixed heap. Benchmarked 3.5x faster than the Windows
             baseline allocator in x86 release builds.
           </p>
+          <ul class="project-highlights">
+            <li>Implemented allocation, free-list traversal, splitting, and coalescing logic.</li>
+            <li>Used benchmark results to compare allocator behavior against a platform baseline.</li>
+          </ul>
           <ul class="project-tags">
             <li>Heap Management</li>
             <li>Next-Fit Allocation</li>
             <li>Split / Coalesce</li>
           </ul>
+          <a class="project-action" href="https://github.com/mplaczek99/PA5" target="_blank" rel="noopener noreferrer">View repository</a>
         </article>
         <article class="project-card">
-          <a class="project-link-tag" href="https://github.com/mplaczek99/SkillSwap" target="_blank" rel="noopener noreferrer" aria-label="Direct GitHub Link: SkillSwap">Direct GitHub Link</a>
-          <p class="project-type">Go + Vue.js</p>
+          <div class="project-visual skillswap-visual" aria-hidden="true">
+            <div class="app-shell">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="lesson-card"></div>
+          </div>
+          <p class="project-type">Go + Vue.js + PostgreSQL</p>
           <h3>SkillSwap</h3>
           <p>
             Full-stack skill-exchange platform with booking, messaging, and video lessons.
             Built Go services (Gin/GORM) and integrated Vue, PostgreSQL, and Docker.
           </p>
+          <ul class="project-highlights">
+            <li>Modeled a multi-role product with bookings, lessons, messaging, and persistence.</li>
+            <li>Connected a Vue frontend to a Go API and PostgreSQL-backed workflow.</li>
+          </ul>
           <ul class="project-tags">
             <li>Vue 3 + Vuex</li>
             <li>Go + Gin API</li>
             <li>PostgreSQL + Docker</li>
           </ul>
+          <a class="project-action" href="https://github.com/mplaczek99/SkillSwap" target="_blank" rel="noopener noreferrer">View repository</a>
         </article>
       </div>
     </section>
 
     <section id="contact" class="section panel contact reveal">
       <p class="section-label">Contact</p>
-      <h2>Hiring for a software engineering role?</h2>
-      <p>Open to full-time backend, systems, and full-stack opportunities.</p>
+      <h2>Looking for a software engineer who can move between backend, systems, and product work?</h2>
+      <p>Email is the best way to reach me. I am open to full-time software engineering roles.</p>
       <div class="hero-actions contact-actions">
-        <a class="button primary" href="mailto:mplaczek99@gmail.com" target="_blank" rel="noopener noreferrer">Email Me</a>
+        <a class="button primary" href="mailto:mplaczek99@gmail.com">Email Me</a>
+        <a class="button ghost" href="https://github.com/mplaczek99" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="button ghost" href="https://www.linkedin.com/in/mplaczek99/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a class="button ghost" href="#home">Back to Top</a>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 Michael Placzek. Built with HTML, CSS, and selectable color themes.</p>
+    <p>&copy; 2026 Michael Placzek. Static GitHub Pages portfolio built with HTML, CSS, and vanilla JavaScript.</p>
   </footer>
 </body>
 </html>

@@ -45,7 +45,6 @@
 
   const root = document.documentElement;
   const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-  const activeThemeName = document.querySelector("[data-theme-name]");
 
   const normalizeTheme = (themeValue) => {
     if (themeValue && allowedThemes.has(themeValue)) {
@@ -61,18 +60,6 @@
     }
   };
 
-  const syncThemeName = (theme) => {
-    if (!activeThemeName) {
-      return;
-    }
-
-    const palette = themeMeta[theme];
-    const themeLabel = palette && palette.label ? palette.label : theme;
-    if (activeThemeName.textContent !== themeLabel) {
-      activeThemeName.textContent = themeLabel;
-    }
-  };
-
   const applyTheme = (themeValue, persist = true) => {
     const theme = normalizeTheme(themeValue);
     if (root.dataset.theme !== theme) {
@@ -80,7 +67,6 @@
     }
 
     syncThemeColor(theme);
-    syncThemeName(theme);
 
     if (persist) {
       try {
